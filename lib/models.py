@@ -20,7 +20,7 @@ class Student(Base):
     __tablename__ = 'students'
 
     id = Column(Integer(), primary_key=True)
-    name = Column(String(), index=True)
+    full_name = Column(String(), index=True)  # Rename 'name' to 'full_name'
     email = Column(String(55))
     grade = Column(Integer())
     birthday = Column(DateTime())
@@ -28,5 +28,5 @@ class Student(Base):
 
     def __repr__(self):
         return f"Student {self.id}: " \
-            + f"{self.name}, " \
-            + f"Grade {self.grade}"
+        + f"{self.full_name}, "   # Update to use 'full_name'
+        + f"Grade {self.grade}"
